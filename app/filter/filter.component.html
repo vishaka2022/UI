@@ -1,0 +1,24 @@
+<div class="filter-container">
+    
+    <div class="filter-input">
+        <span>Filter: </span>
+        <input type="radio" id="All"name="filter" value="All" 
+        [(ngModel)]="selectedRadioButtonValue" 
+        (change)="onRadioButtonSelectionChanged()"/>
+        <span>{{'   All Products('+all+')   '  }}</span>
+    </div>
+
+    <div class="filter-input">
+        <input type="radio" id="Men" name="filter" value="Men" 
+        [(ngModel)]="selectedRadioButtonValue" 
+        (change)="onRadioButtonSelectionChanged()"/>
+        <span>{{'   Men('+Men+')    '}}</span>
+    </div>
+    <div class="filter-input">
+        <input type="radio" id="Women" name="filter" value="Women" 
+        [(ngModel)]="selectedRadioButtonValue" 
+        (change)="onRadioButtonSelectionChanged()"/>
+        <span>{{'Women('+Women+')   '}}</span>
+    </div>
+
+</div>

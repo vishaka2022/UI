@@ -1,0 +1,51 @@
+<app-home></app-home>
+<div class="search-filter">
+    
+    <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+    <app-filter 
+    [total]="getTotalProducts()"
+    [Men]="getTotalMenProducts()"
+    [Women]="getTotalWomenProducts()"
+    (filterRadioButtonSelectionChanged)="onFilterRadioButtonChanged($event)"></app-filter>
+</div>
+
+
+<div class="prod-wrapper">
+    <!-- <div class="row"> -->
+<div class= "row" >
+    <div class="col-4" *ngFor="let prod of filteredData">
+        <!-- <ng-container class="prod-container"*ngIf="prodCountRadioButton==='All' || prodCountRadioButton=== prod.category"> -->
+            
+        <!-- <div class= "prod-wrapper" *ngIf="prodCountRadioButton==='All' || prodCountRadioButton=== prod.category"> -->
+            <!-- *ngIf="searchText==='' || prod.name.toLowerCase().includes(searchText.toLowerCase())" -->
+            
+            <div class= "prod-card " >
+                
+                <div>
+                    <img [src]= "prod.image">
+                </div>
+                <div class= "prod-name"><h4>{{ prod.name}}</h4></div>
+                <!-- <div class= "prod-description"><p>{{ prod.description.slice(0, 80)}}...</p></div> -->
+                <div class="details">
+                    <div class= "prod-type" [ngStyle]="{color: prod.category === 'Men' ? 'Blue' : 'Red'}">{{ prod.category}}</div>
+                    <div class= "prod-price"><b>Price:</b>Rs. {{ prod.price}}</div>
+                </div>
+                <div class= "prod-buttons">
+                    <button class="btn btn-buy"  (click)="onCreatePost(prod)">Add to Cart</button>
+                    <!-- <button class="btn btn-show" routerLink='details/{{prod.id}}' >Show Details</button> -->
+                    <a href="details/{{prod.id}}">Show Details</a>
+                </div>
+                </div>
+            
+        <!-- </ng-container> -->
+        </div>
+          
+       
+        <!-- </div> -->
+    </div>
+    </div>
+    
+    
+
+    
+

@@ -1,0 +1,40 @@
+
+.login-wrapper{
+    /* max-height: 100vh; */
+    /* display: block; */
+    padding: 0;
+    margin: 10rem;
+    width:70rem;
+    display: flex;
+    justify-content: center;
+
+}
+input{
+    margin-bottom: 2rem;
+}
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+.card{
+    width:40rem;
+    display:flex;
+    justify-self: center;
+    /* text-align: center; */
+}
+
+@media screen and (max-width:1024px) {
+  .login-wrapper{
+    /* justify-content: center; */
+    display: inline-block;
+    width:80%;
+    margin:10rem 10rem auto
+  }
+  .card{
+    display:inline-block;
+    width: 70%;
+  }
+  
+    
+}
+
+  
